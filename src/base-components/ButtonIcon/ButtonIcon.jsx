@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import MuiButton from "@mui/material/Button";
 
-const ButtonIcon = ({
+export default ButtonIcon = ({
   variant,
   disabled,
   startIcon,
@@ -37,5 +37,3 @@ ButtonIcon.defaultProps = {
   endIcon: undefined,
   onClick: undefined,
 };
-
-export default ButtonIcon;
