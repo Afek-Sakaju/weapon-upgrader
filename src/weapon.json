@@ -1,0 +1,44 @@
+{
+  "_id": "d3a804f4-78a9-4b9a-9e14-6df3e5c2387e",
+  "name": "AK-47",
+  "image": "/public/weapon.png",
+  "description": "an amazing salad containing nutrient rich veggies and lemon juice all fresh and tasty",
+  "basicPrice": 100,
+  "upgrades": [
+    {
+      "_id": "62b6e4a3-08f6-40e7-af4e-b013f207cfa4",
+      "name": "Onion",
+      "price": 1
+    },
+    {
+      "_id": "d6c0c4bc-6f0a-48c7-836f-217a8c0d01a0",
+      "name": "Mushrooms",
+      "price": 3
+    },
+    {
+      "_id": "e285c873-20db-4ebf-b8d3-4b9e7a34a7a2",
+      "name": "Olives",
+      "price": 1
+    },
+    {
+      "_id": "7852915a-08c3-49c2-ba12-35a453dbade6",
+      "name": "Corn",
+      "price": 1
+    },
+    {
+      "_id": "98db68cf-3a96-4f80-9d7d-18498f7f8c6b",
+      "name": "Egg",
+      "price": 4
+    },
+    {
+      "_id": "5076a6a8-63f5-4f92-85d7-542d2db38aef",
+      "name": "Pepper",
+      "price": 2
+    },
+    {
+      "_id": "fde44b5f-4d9c-4f33-b83c-6fe9f7b3d56b",
+      "name": "Cheese",
+      "price": 3
+    }
+  ]
+}
