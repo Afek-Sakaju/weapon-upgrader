@@ -1,13 +1,14 @@
 import React from "react";
+import Grid from "@mui/material/Grid";
 
-import { Upgrade } from "@components";
+import { Upgrade } from "@layouts";
 import weaponData from "./weapon.json";
 
 export default function App() {
   const { name, description, image, basicPrice, upgrades } = weaponData;
 
   return (
-    <div className="app-container">
+    <Grid sx={{ maxWidth: "950px" }}>
       <Upgrade
         name={name}
         description={description}
@@ -15,6 +16,6 @@ export default function App() {
         basicPrice={basicPrice}
         upgrades={upgrades}
       />
-    </div>
+    </Grid>
   );
 }

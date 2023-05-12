@@ -43,7 +43,8 @@
           ["@src", "./src/"],
           ["@components", "./src/components/"],
           ["@base-components", "./src/base-components/"],
-          ["@utils", "./src/utils/"]
+          ["@utils", "./src/utils/"],
+          ["@layouts", "./src/layouts/"]
         ],
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }

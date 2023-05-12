@@ -6,7 +6,3 @@ body {
   display: flex;
   justify-content: center;
 }
-
-.app-container {
-  max-width: 950px;
-}

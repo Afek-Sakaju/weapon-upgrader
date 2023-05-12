@@ -32,8 +32,8 @@ export default defineConfig(() => ({
         replacement: path.resolve(__dirname, "./src/utils"),
       },
       {
-        find: "@store",
-        replacement: path.resolve(__dirname, "./src/store"),
+        find: "@layouts",
+        replacement: path.resolve(__dirname, "./src/layouts"),
       },
     ],
   },

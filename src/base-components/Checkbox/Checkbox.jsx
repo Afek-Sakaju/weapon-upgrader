@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import MuiCheckbox from "@mui/material/Checkbox";
+
+import { MuiCheckbox } from "./Checkbox.styled";
 
 export default function Checkbox({
   label,
@@ -59,7 +60,7 @@ Checkbox.propTypes = {
 };
 
 Checkbox.defaultProps = {
-  label: undefined,
+  label: "",
   size: "small",
   color: undefined,
   muiColor: undefined,
