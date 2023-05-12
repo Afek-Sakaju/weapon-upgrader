@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import InputAdornment from "@mui/material/InputAdornment";
 import TextField from "@mui/material/TextField";
 
-export default Input = ({
+export default function Input({
   label,
   id,
   name,
@@ -25,7 +25,7 @@ export default Input = ({
   focused,
   helperText,
   ...props
-}) => {
+}) {
   return (
     <TextField
       fullWidth={fullWidth}
@@ -61,7 +61,7 @@ export default Input = ({
       {...props}
     />
   );
-};
+}
 
 Input.propTypes = {
   label: PropTypes.string,

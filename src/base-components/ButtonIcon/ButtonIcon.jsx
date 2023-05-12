@@ -2,14 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import MuiButton from "@mui/material/Button";
 
-export default ButtonIcon = ({
+export default function ButtonIcon({
   variant,
   disabled,
   startIcon,
   endIcon,
   onClick,
   ...props
-}) => {
+}) {
   return (
     <MuiButton
       variant={variant}
@@ -20,7 +20,7 @@ export default ButtonIcon = ({
       {...props}
     />
   );
-};
+}
 
 ButtonIcon.propTypes = {
   variant: PropTypes.oneOf(["contained", "outlined", "text"]),

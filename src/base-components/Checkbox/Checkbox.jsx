@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import MuiCheckbox from "@mui/material/Checkbox";
 
-export default Checkbox = ({
+export default function Checkbox({
   label,
   size,
   color,
@@ -19,7 +19,7 @@ export default Checkbox = ({
   helperText,
   fontSize,
   ...props
-}) => {
+}) {
   return (
     <MuiCheckbox
       label={label}
@@ -40,7 +40,7 @@ export default Checkbox = ({
       {...props}
     />
   );
-};
+}
 
 Checkbox.propTypes = {
   label: PropTypes.string,
