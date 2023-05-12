@@ -25,8 +25,8 @@ export default function Checkbox({
       label={label}
       size={size}
       color={color}
-      textColor={textColor}
-      muiColor={muiColor}
+      textcolor={textColor}
+      muicolor={muiColor}
       icon={icon}
       checkedIcon={checkedIcon}
       defaultChecked={defaultChecked}
@@ -34,8 +34,8 @@ export default function Checkbox({
       disabled={disabled}
       checked={checked}
       onChange={onChange}
-      labelPlacement={labelPlacement}
-      helperText={helperText}
+      labelplacement={labelPlacement}
+      helpertext={helperText}
       fontSize={fontSize}
       {...props}
     />

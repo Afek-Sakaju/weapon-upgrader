@@ -33,7 +33,7 @@ export default function Input({
       id={id}
       name={name}
       error={error}
-      helperText={helperText}
+      helpertext={helperText}
       onChange={onChange}
       required={required}
       value={value}
