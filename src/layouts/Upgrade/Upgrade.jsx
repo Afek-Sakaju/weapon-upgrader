@@ -32,22 +32,19 @@ export default function Upgrade({
       <Item xs={6}>
         <Image label="Weapon:" readOnly value={name} />
       </Item>
-      <Item xs={12}>
+      <ItemCenterAlone>
         <Input label="Description:" readOnly value={description} />
-      </Item>
-
+      </ItemCenterAlone>
       {upgrades
         ?.sort((upg1, upg2) => upg2?.price - upg1?.price)
         .map(({ _id, name, price }) => (
-          <Item xs={3} key={_id}>
-            <Checkbox
-              label={<PriceLabel label={name} price={price} />}
-            ></Checkbox>
+          <Item key={_id} xs={3}>
+            <Checkbox label={`${name} ($${price})`} />
           </Item>
         ))}
       <ItemCenterAlone>
         <ButtonIcon onClick={() => alert("You'v paid:" + basicPrice + "$")}>
-          <ButtonPriceLabel price={basicPrice} />
+          <PriceLabel label="Upgrade" price={basicPrice} />
         </ButtonIcon>
       </ItemCenterAlone>
     </Container>

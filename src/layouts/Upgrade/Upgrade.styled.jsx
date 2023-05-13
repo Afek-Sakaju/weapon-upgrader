@@ -4,7 +4,6 @@ import MuiGrid from "@mui/material/Grid";
 import MuiTypography from "@mui/material/Typography";
 import MuiStack from "@mui/material/Stack";
 import { Image as MuiImage } from "mui-image";
-import { PriceLabel } from "@base-components";
 
 export const Stack = styled(MuiStack)`
   display: flex;
