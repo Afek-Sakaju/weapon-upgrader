@@ -6,7 +6,7 @@
   "basicPrice": 0,
   "upgrades": [
     {
-      "_id": "7852915a-9d7d-20db-836f-217a8c0d01a0",
+      "_id": "12b8f15f-3e18-4d02-b3e4-9e3625b29f6a",
       "name": "Knife attachment",
       "price": 5
     },
@@ -36,14 +36,14 @@
       "price": 10
     },
     {
-      "_id": "5076a6a8-63f5-4f92-85d7-542d2db38aef",
+      "_id": "cfb45836-0ed5-4a6f-9b42-764eeaf678dc",
       "name": "Grip",
-      "price": 5
+      "price": 15
     },
     {
-      "_id": "5076a6a8-63f5-4f92-85d7-542d2db38aef",
-      "name": "Gold camouflage",
-      "price": 20
+      "_id": "7c9d6847-7b1d-4fca-91b0-2b8f5e9f2a89",
+      "name": "Grenade launcher",
+      "price": 5
     }
   ]
 }
