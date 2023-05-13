@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import MuiButton from "@mui/material/Button";
+
+import { Button } from "./ButtonIcon.styled";
 
 export default function ButtonIcon({
   variant,
@@ -11,7 +12,7 @@ export default function ButtonIcon({
   ...props
 }) {
   return (
-    <MuiButton
+    <Button
       variant={variant}
       startIcon={startIcon}
       endIcon={endIcon}

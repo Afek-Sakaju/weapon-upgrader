@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import MoneyIcon from "@mui/icons-material/MonetizationOn";
 
 import { ButtonIcon, Checkbox, Input } from "@base-components";
 import {
@@ -27,6 +28,9 @@ export default function Upgrade({
       <Item xs={6}>
         <Input label="Weapon:" readOnly value={name} />
       </Item>
+      <Item xs={6}>
+        <Image label="Weapon:" readOnly value={name} />
+      </Item>
       <Item xs={12}>
         <Input label="Description:" readOnly value={description} />
       </Item>
@@ -35,12 +39,21 @@ export default function Upgrade({
         ?.sort((upg1, upg2) => upg2?.price - upg1?.price)
         .map(({ _id, name, price }) => (
           <Item xs={3} key={_id}>
-            <Checkbox label={`${name} (${price}$)`} />
+            <Checkbox
+              label={
+                <>
+                  {`${name} ${price}`}
+                  <MoneyIcon />
+                </>
+              }
+            ></Checkbox>
           </Item>
         ))}
+
       <ItemCenterAlone>
         <ButtonIcon onClick={() => alert("You'v paid:" + basicPrice + "$")}>
-          {`Upgrade $${basicPrice}`}
+          Upgrade {basicPrice}
+          <MoneyIcon />
         </ButtonIcon>
       </ItemCenterAlone>
     </Container>
