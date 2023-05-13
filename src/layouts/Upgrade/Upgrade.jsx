@@ -5,10 +5,9 @@ import { ButtonIcon, Checkbox, Input } from "@base-components";
 import {
   Container,
   Item,
-  SmallItem,
   Title,
   Image,
-  Stack,
+  ItemCenterAlone,
 } from "./Upgrade.styled";
 
 export default function Upgrade({
@@ -20,29 +19,30 @@ export default function Upgrade({
 }) {
   return (
     <Container>
-      <Item>
-        <Title>
+      <ItemCenterAlone>
+        <Title variant="h3">
           Call of duty MW <br /> Weapon upgrade form:
         </Title>
-      </Item>
-      <Item>
+      </ItemCenterAlone>
+      <Item xs={6}>
         <Input label="Weapon:" readOnly value={name} />
       </Item>
-      <Item>
+      <Item xs={12}>
         <Input label="Description:" readOnly value={description} />
       </Item>
+
       {upgrades
         ?.sort((upg1, upg2) => upg2?.price - upg1?.price)
         .map(({ _id, name, price }) => (
-          <SmallItem key={_id}>
+          <Item xs={3} key={_id}>
             <Checkbox label={`${name} (${price}$)`} />
-          </SmallItem>
+          </Item>
         ))}
-      <Item>
+      <ItemCenterAlone>
         <ButtonIcon onClick={() => alert("You'v paid:" + basicPrice + "$")}>
           {`Upgrade $${basicPrice}`}
         </ButtonIcon>
-      </Item>
+      </ItemCenterAlone>
     </Container>
   );
 }

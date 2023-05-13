@@ -8,14 +8,12 @@ export default function App() {
   const { name, description, image, basicPrice, upgrades } = weaponData;
 
   return (
-    <Grid sx={{ maxWidth: "950px" }}>
-      <Upgrade
-        name={name}
-        description={description}
-        image={image}
-        basicPrice={basicPrice}
-        upgrades={upgrades}
-      />
-    </Grid>
+    <Upgrade
+      name={name}
+      description={description}
+      image={image}
+      basicPrice={basicPrice}
+      upgrades={upgrades}
+    />
   );
 }

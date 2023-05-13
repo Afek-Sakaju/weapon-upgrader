@@ -16,32 +16,30 @@ export const Zoom = styled(MuiZoom)`
   transition-delay: 250ms;
 `;
 
-export const Container = styled(({ ...props }) => (
-  <Zoom in>
-    <MuiGrid container spacing={5} {...props} />
-  </Zoom>
-))`
-  height: 100%;
+export const Grid = styled(MuiGrid)`
+  height: 700px;
+  width: 1000px;
 `;
 
-export const Title = styled(({ ...props }) => (
-  <MuiTypography variant="h3" {...props} />
-))`
+export const Container = styled(({ ...props }) => (
+  <Zoom in>
+    <Grid container spacing={6} {...props} />
+  </Zoom>
+))``;
+
+export const Title = styled(MuiTypography)`
   padding: 20px;
   text-align: center;
   user-select: none;
+  margin: 30px 0 50px 0;
 `;
 
-export const Item = styled(({ ...props }) => (
+export const Item = styled(({ ...props }) => <MuiGrid item {...props} />)``;
+
+export const ItemCenterAlone = styled(({ ...props }) => (
   <MuiGrid xs={12} item {...props} />
 ))`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-`;
-
-export const SmallItem = styled(({ ...props }) => (
-  <MuiGrid xs={3} item {...props} />
-))`
-  justify-content: space-evenly;
 `;
