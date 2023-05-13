@@ -2,13 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import MoneyIcon from "@mui/icons-material/MonetizationOn";
 
-import { ButtonIcon, Checkbox, Input } from "@base-components";
+import { ButtonIcon, Checkbox, Input, PriceLabel } from "@base-components";
 import {
   Container,
   Item,
   Title,
   Image,
   ItemCenterAlone,
+  ButtonPriceLabel,
 } from "./Upgrade.styled";
 
 export default function Upgrade({
@@ -40,20 +41,13 @@ export default function Upgrade({
         .map(({ _id, name, price }) => (
           <Item xs={3} key={_id}>
             <Checkbox
-              label={
-                <>
-                  {`${name} ${price}`}
-                  <MoneyIcon />
-                </>
-              }
+              label={<PriceLabel label={name} price={price} />}
             ></Checkbox>
           </Item>
         ))}
-
       <ItemCenterAlone>
         <ButtonIcon onClick={() => alert("You'v paid:" + basicPrice + "$")}>
-          Upgrade {basicPrice}
-          <MoneyIcon />
+          <ButtonPriceLabel price={basicPrice} />
         </ButtonIcon>
       </ItemCenterAlone>
     </Container>

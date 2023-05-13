@@ -4,6 +4,7 @@ import MuiGrid from "@mui/material/Grid";
 import MuiTypography from "@mui/material/Typography";
 import MuiStack from "@mui/material/Stack";
 import { Image as MuiImage } from "mui-image";
+import { PriceLabel } from "@base-components";
 
 export const Stack = styled(MuiStack)`
   display: flex;
@@ -38,6 +39,20 @@ export const Item = styled(({ ...props }) => <MuiGrid item {...props} />)``;
 
 export const ItemCenterAlone = styled(({ ...props }) => (
   <MuiGrid xs={12} item {...props} />
+))`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ButtonPriceLabel = styled(({ ...props }) => (
+  <PriceLabel
+    label="Upgrade"
+    sx={{ fontSize: "1.1em" }}
+    iconStyle={{ fontSize: "1.1em" }}
+    priceBoxStyle={{ justifyContent: "center" }}
+    {...props}
+  />
 ))`
   display: flex;
   justify-content: center;

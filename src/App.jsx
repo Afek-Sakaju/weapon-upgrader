@@ -1,5 +1,4 @@
 import React from "react";
-import Grid from "@mui/material/Grid";
 
 import { Upgrade } from "@layouts";
 import weaponData from "./weapon.json";
