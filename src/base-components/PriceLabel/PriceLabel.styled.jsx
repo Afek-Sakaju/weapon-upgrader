@@ -1,6 +1,8 @@
+import React from "react";
 import { styled } from "@mui/material/styles";
 import MuiTypography from "@mui/material/Typography";
 import MuiBox from "@mui/material/Box";
+import MuiGrid from "@mui/material/Grid";
 import Money from "@mui/icons-material/MonetizationOn";
 
 export const Typography = styled(MuiTypography)`
@@ -17,7 +19,7 @@ export const PriceBox = styled(MuiBox)`
   gap: 3px;
 `;
 
-export const Item = styled(({ ...props }) => <Grid {...props} item></Grid>)``;
+export const Item = styled(({ ...props }) => <MuiGrid {...props} item />)``;
 
 export const MoneyIcon = styled(Money)`
   font-size: 1.2em;
