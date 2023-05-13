@@ -1,3 +1,4 @@
+import React from "react";
 import { styled } from "@mui/material/styles";
 import MuiZoom from "@mui/material/Zoom";
 import MuiGrid from "@mui/material/Grid";
@@ -10,7 +11,9 @@ export const Stack = styled(MuiStack)`
   width: 100%;
 `;
 
-export const Image = styled(MuiImage)``;
+export const Image = styled(({ ...props }) => (
+  <MuiImage width="100%" height="150px" fit="contain" {...props} />
+))``;
 
 export const Zoom = styled(MuiZoom)`
   transition-delay: 250ms;
@@ -23,7 +26,7 @@ export const Grid = styled(MuiGrid)`
 
 export const Container = styled(({ ...props }) => (
   <Zoom in>
-    <Grid container spacing={6} {...props} />
+    <Grid container spacing={4} {...props} />
   </Zoom>
 ))``;
 
@@ -38,20 +41,6 @@ export const Item = styled(({ ...props }) => <MuiGrid item {...props} />)``;
 
 export const ItemCenterAlone = styled(({ ...props }) => (
   <MuiGrid xs={12} item {...props} />
-))`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const ButtonPriceLabel = styled(({ ...props }) => (
-  <PriceLabel
-    label="Upgrade"
-    sx={{ fontSize: "1.1em" }}
-    iconStyle={{ fontSize: "1.1em" }}
-    priceBoxStyle={{ justifyContent: "center" }}
-    {...props}
-  />
 ))`
   display: flex;
   justify-content: center;

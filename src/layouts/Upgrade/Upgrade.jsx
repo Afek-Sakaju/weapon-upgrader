@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import MoneyIcon from "@mui/icons-material/MonetizationOn";
 
 import { ButtonIcon, Checkbox, Input, PriceLabel } from "@base-components";
 import {
@@ -9,7 +8,6 @@ import {
   Title,
   Image,
   ItemCenterAlone,
-  ButtonPriceLabel,
 } from "./Upgrade.styled";
 
 export default function Upgrade({
@@ -30,20 +28,21 @@ export default function Upgrade({
         <Input label="Weapon:" readOnly value={name} />
       </Item>
       <Item xs={6}>
-        <Image label="Weapon:" readOnly value={name} />
+        <Image src={image ?? ""} />
       </Item>
       <ItemCenterAlone>
         <Input label="Description:" readOnly value={description} />
       </ItemCenterAlone>
       {upgrades
-        ?.sort((upg1, upg2) => upg2?.price - upg1?.price)
-        .map(({ _id, name, price }) => (
+        ?.sort((upg1, upg2) => upg2.price - upg1.price)
+        .map(({ _id, name: upgradeName, price }) => (
           <Item key={_id} xs={3}>
-            <Checkbox label={`${name} ($${price})`} />
+            <Checkbox label={`${upgradeName} ($${price})`} />
           </Item>
         ))}
-      <ItemCenterAlone>
-        <ButtonIcon onClick={() => alert("You'v paid:" + basicPrice + "$")}>
+      <ItemCenterAlone mt={2}>
+        {/* eslint-disable-next-line no-alert */}
+        <ButtonIcon onClick={() => alert(`${basicPrice}`)}>
           <PriceLabel label="Upgrade" price={basicPrice} />
         </ButtonIcon>
       </ItemCenterAlone>

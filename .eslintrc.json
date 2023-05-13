@@ -28,6 +28,7 @@
     "no-plusplus": 0,
     "no-console": 0,
     "radix": 0,
+    "react/jsx-props-no-spreading": 0,
     "react/function-component-definition": [
       2,
       {
