@@ -1,7 +1,11 @@
-import React from "react";
+/* eslint-disable no-alert */
+/* eslint-disable react/prop-types */
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
+import { withFormik, FieldArray } from "formik";
 
 import { ButtonIcon, Checkbox, Input, PriceLabel } from "@base-components";
+import { getTotalPrice } from "@utils";
 import {
   Container,
   Item,
@@ -10,13 +14,27 @@ import {
   ItemCenterAlone,
 } from "./Upgrade.styled";
 
-export default function Upgrade({
-  name,
-  description,
-  image,
-  basicPrice,
-  upgrades,
-}) {
+const Upgrade = (props) => {
+  const {
+    values,
+    name,
+    description,
+    image,
+    basicPrice,
+    upgrades,
+    upgradesBoughtIds,
+    isSubmitting,
+    handleSubmit,
+  } = props;
+
+  useEffect(() => {
+    values.totalPrice = getTotalPrice(
+      basicPrice,
+      upgrades?.filter((upg) => values.upgradesBoughtIds.includes(upg._id))
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [values.upgradesBoughtIds.length]);
+
   return (
     <Container>
       <ItemCenterAlone>
@@ -33,22 +51,67 @@ export default function Upgrade({
       <ItemCenterAlone>
         <Input label="Description:" readOnly value={description} />
       </ItemCenterAlone>
-      {upgrades
-        ?.sort((upg1, upg2) => upg2.price - upg1.price)
-        .map(({ _id, name: upgradeName, price }) => (
-          <Item key={_id} xs={3}>
-            <Checkbox label={`${upgradeName} ($${price})`} />
-          </Item>
-        ))}
+      <FieldArray name="upgradesBoughtIds">
+        {({ remove, push }) => {
+          return upgrades
+            ?.sort((e1, e2) => e1.order - e2.order)
+            .map(({ _id, name: upgradeName, price }) => (
+              <Item key={_id} xs={3}>
+                <Checkbox
+                  checked={upgradesBoughtIds?.includes(_id)}
+                  label={`${upgradeName} ($${price})`}
+                  onChange={() => {
+                    const upgradeIndex = values.upgradesBoughtIds?.indexOf(_id);
+                    if (upgradeIndex >= 0) remove(upgradeIndex);
+                    else push(_id);
+                  }}
+                />
+              </Item>
+            ));
+        }}
+      </FieldArray>
       <ItemCenterAlone mt={2}>
-        {/* eslint-disable-next-line no-alert */}
-        <ButtonIcon onClick={() => alert(`${basicPrice}`)}>
-          <PriceLabel label="Upgrade" price={basicPrice} />
+        <ButtonIcon
+          disabled={isSubmitting}
+          onClick={() => {
+            handleSubmit();
+          }}
+        >
+          <PriceLabel label="Upgrade" price={values.totalPrice} />
         </ButtonIcon>
       </ItemCenterAlone>
     </Container>
   );
-}
+};
+
+export default withFormik({
+  validateOnMount: false,
+  validateOnChange: false,
+
+  mapPropsToValues: (props) => ({
+    totalPrice: props.price,
+    upgradesBoughtIds: [],
+  }),
+
+  validate: (values) => {
+    const errors = {};
+
+    if (!values.upgradesBoughtIds.length) {
+      errors.upgradesBoughtIds = "At least 1 upgrade required";
+      alert(errors.upgradesBoughtIds);
+    }
+
+    return errors;
+  },
+
+  handleSubmit: async (values, { setSubmitting, resetForm }) => {
+    alert(`Congrats for the upgrades, it will cost: $${values.totalPrice}`);
+    setSubmitting(false);
+    resetForm();
+  },
+
+  displayName: "WeaponUpgradeForm",
+})(Upgrade);
 
 Upgrade.propTypes = {
   name: PropTypes.string,
