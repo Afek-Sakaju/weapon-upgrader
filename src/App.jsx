@@ -12,7 +12,7 @@ export default function App() {
       description={description}
       image={image}
       basicPrice={basicPrice}
-      upgrades={upgrades}
+      upgradesList={upgrades}
     />
   );
 }

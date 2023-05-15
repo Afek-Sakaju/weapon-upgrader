@@ -37,7 +37,9 @@ export const Title = styled(MuiTypography)`
   margin: 30px 0 50px 0;
 `;
 
-export const Item = styled(({ ...props }) => <MuiGrid item {...props} />)``;
+export const Item = styled(({ ...props }) => (
+  <MuiGrid item xs={6} {...props} />
+))``;
 
 export const ItemCenterAlone = styled(({ ...props }) => (
   <MuiGrid xs={12} item {...props} />
