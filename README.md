@@ -1,4 +1,4 @@
-# Weapon-upgrade-form
+# Weapon-Upgrader
 
 ## Overview
 
@@ -8,7 +8,7 @@
 
 ---
 
-**Live demo:**</br>[weapon-upgrade-form](http://afektheminilearner.github.io/weapon-upgrade-form)
+**Live demo:**</br>[weapon-upgrader](http://afektheminilearner.github.io/weapon-upgrader)
 
 **Command lines:**
 
