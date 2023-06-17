@@ -19,7 +19,7 @@
 
 ### **Take a glimpse into the app:**
 
-![Example](./readme-resources/project-pic.PNG)
+![Example](./readme-resources/project-gif.gif)
 
 ---
 
