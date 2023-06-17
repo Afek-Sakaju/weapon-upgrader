@@ -34,24 +34,34 @@ const Upgrade = (props) => {
 
   const [shouldRender, setShouldRender] = useState(true);
 
+  const reRenderHandler = () => {
+    setShouldRender(false);
+    setTimeout(() => setShouldRender(true));
+  };
+
   values.totalPrice = useMemo(
     () =>
       getTotalPrice(
         basicPrice,
         upgradesList?.filter((upg) => values.upgradedIds.includes(upg._id))
       ),
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [values.upgradedIds.length]
   );
 
   useEffect(() => {
-    if (values.totalPrice === 0) {
-      setShouldRender(false);
-      setTimeout(() => setShouldRender(true));
-    }
+    if (values.totalPrice === 0) reRenderHandler();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSubmitting]);
+
+  useEffect(() => {
+    values.upgradedIds = [];
+    reRenderHandler();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [name]);
 
   return (
     <Container>
@@ -63,12 +73,14 @@ const Upgrade = (props) => {
       <Item>
         <FormControl fullWidth variant="standard">
           <InputLabel>Weapon:</InputLabel>
-          <Select value={name} label={name} onChange={onWeaponChange}>
+          <Select value={name} onChange={(e) => onWeaponChange(e.target.value)}>
             <MenuItem value={name}>{name}</MenuItem>
             {weaponsList
               ?.filter((w) => w !== name)
               ?.map((weaponName) => (
-                <MenuItem value={weaponName}>{weaponName}</MenuItem>
+                <MenuItem key={weaponName} value={weaponName}>
+                  {weaponName}
+                </MenuItem>
               ))}
           </Select>
         </FormControl>

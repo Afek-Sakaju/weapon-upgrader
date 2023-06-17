@@ -1,0 +1,133 @@
+{
+  "AK-47": {
+    "_id": "d3a804f4-78a9-4b9a-9e14-6df3e5c2387e",
+    "name": "AK-47",
+    "image": "ak47.png",
+    "description": "Assault rifle, perfect for medium-long range but have high recoil.",
+    "basicPrice": 0,
+    "upgrades": [
+      {
+        "_id": "12b8f15f-3e18-4d02-b3e4-9e3625b29f6a",
+        "name": "Knife attachment",
+        "price": 5
+      },
+      {
+        "_id": "62b6e4a3-08f6-40e7-af4e-b013f207cfa4",
+        "name": "Red dot sight",
+        "price": 20
+      },
+      {
+        "_id": "d6c0c4bc-6f0a-48c7-836f-217a8c0d01a0",
+        "name": "Quickdraw handle",
+        "price": 10
+      },
+      {
+        "_id": "e285c873-20db-4ebf-b8d3-4b9e7a34a7a2",
+        "name": "Laser",
+        "price": 5
+      },
+      {
+        "_id": "7852915a-08c3-49c2-ba12-35a453dbade6",
+        "name": "Suppressor",
+        "price": 15
+      },
+      {
+        "_id": "98db68cf-3a96-4f80-9d7d-18498f7f8c6b",
+        "name": "Big ammo magazine",
+        "price": 10
+      },
+      {
+        "_id": "cfb45836-0ed5-4a6f-9b42-764eeaf678dc",
+        "name": "Grip",
+        "price": 15
+      },
+      {
+        "_id": "7c9d6847-7b1d-4fca-91b0-2b8f5e9f2a89",
+        "name": "Grenade launcher",
+        "price": 5
+      }
+    ]
+  },
+  "L96A1": {
+    "_id": "29b2a623-b729-462d-ba53-2d8a91eab4a7",
+    "name": "L96A1",
+    "image": "l96a1.png",
+    "description": "Bolt-action sniper rifle, known for its accuracy and stopping power.",
+    "basicPrice": 0,
+    "upgrades": [
+      {
+        "_id": "9afcf5e1-372a-482e-86a5-597307876911",
+        "name": "Silencer",
+        "price": 5
+      },
+      {
+        "_id": "48ce85b1-8e79-4ea3-8682-f5161cb6cb7b",
+        "name": "Extended Sniper Scope",
+        "price": 15
+      },
+      {
+        "_id": "3c8bcff5-c0a4-4d70-9f52-877feecb4d76",
+        "name": "Adjustable Stock",
+        "price": 10
+      },
+      {
+        "_id": "08d4b9b6-350a-4f88-9f91-fec2c032dd02",
+        "name": "Bi-pod",
+        "price": 20
+      },
+      {
+        "_id": "f6539510-183b-41d3-bb0a-b3a0584d0a64",
+        "name": "High-velocity Rounds",
+        "price": 15
+      },
+      {
+        "_id": "14e9b9a6-05f4-4099-9615-d800f84bc92f",
+        "name": "Reinforced Barrel",
+        "price": 20
+      },
+      {
+        "_id": "bdcb7b7e-ec97-4c3a-9dbf-2e64884b00c6",
+        "name": "Anti-materiel Rounds",
+        "price": 30
+      }
+    ]
+  },
+  "MP7": {
+    "name": "MP7",
+    "description": "The MP7 is a compact, lightweight submachine gun that excels at close-quarters combat.",
+    "image": "mp7.png",
+    "basicPrice": 0,
+    "upgrades": [
+      {
+        "_id": "e0f721e7-46d4-4e2c-92b6-6875e3a32f88",
+        "name": "Extended Magazine",
+        "price": 5
+      },
+      {
+        "_id": "a81188b2-2219-4381-bd13-bcd8290ff6f9",
+        "name": "Red Dot Sight",
+        "price": 10
+      },
+      {
+        "_id": "2e0f58b6-0c3f-47e0-8d53-4fe437c29f3d",
+        "name": "Foregrip",
+        "price": 15
+      },
+      {
+        "_id": "e92d2dfe-c39d-4d09-8bdc-05fb33575cc4",
+        "name": "Suppressor",
+        "price": 5
+      },
+      {
+        "_id": "06a41ff2-5aee-4ce4-94c3-dbf5df6b843a",
+        "name": "Laser Sight",
+        "price": 8
+      },
+      {
+        "_id": "e95a7324-4de7-49ff-942a-d3da70b518c0",
+        "name": "Stock Mod",
+        "price": 12
+      }
+    ]
+  }
+}
