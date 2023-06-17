@@ -11,19 +11,25 @@ import {
   Title,
   Image,
   ItemCenterAlone,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
 } from "./Upgrade.styled";
 
 const Upgrade = (props) => {
   const {
-    values,
-    name,
-    description,
-    image,
     basicPrice,
-    upgradesList,
-    upgradedIds,
-    isSubmitting,
+    description,
     handleSubmit,
+    image,
+    isSubmitting,
+    name,
+    onWeaponChange,
+    upgradedIds,
+    upgradesList,
+    values,
+    weaponsList,
   } = props;
 
   const [shouldRender, setShouldRender] = useState(true);
@@ -55,13 +61,28 @@ const Upgrade = (props) => {
         </Title>
       </ItemCenterAlone>
       <Item>
-        <Input label="Weapon:" readOnly value={name} />
+        <FormControl fullWidth variant="standard">
+          <InputLabel>Weapon:</InputLabel>
+          <Select value={name} label={name} onChange={onWeaponChange}>
+            <MenuItem value={name}>{name}</MenuItem>
+            {weaponsList
+              ?.filter((w) => w !== name)
+              ?.map((weaponName) => (
+                <MenuItem value={weaponName}>{weaponName}</MenuItem>
+              ))}
+          </Select>
+        </FormControl>
       </Item>
       <Item>
         <Image src={image ?? ""} />
       </Item>
       <ItemCenterAlone>
-        <Input label="Description:" readOnly value={description} />
+        <Input
+          label="Description:"
+          readOnly
+          value={description}
+          variant="standard"
+        />
       </ItemCenterAlone>
       <FieldArray name="upgradedIds">
         {({ remove, push }) => {
@@ -127,19 +148,23 @@ export default withFormik({
 })(Upgrade);
 
 Upgrade.propTypes = {
-  name: PropTypes.string,
+  basicPrice: PropTypes.number,
   description: PropTypes.string,
   image: PropTypes.string,
-  basicPrice: PropTypes.number,
+  name: PropTypes.string,
+  onWeaponChange: PropTypes.func,
   upgradesList: PropTypes.arrayOf(
     PropTypes.shape({ name: PropTypes.string, price: PropTypes.number })
   ),
+  weaponsList: PropTypes.arrayOf(PropTypes.string),
 };
 
 Upgrade.defaultProps = {
-  name: undefined,
+  basicPrice: 0,
   description: undefined,
   image: undefined,
-  basicPrice: 0,
+  name: undefined,
+  onWeaponChange: undefined,
   upgradesList: undefined,
+  weaponsList: undefined,
 };

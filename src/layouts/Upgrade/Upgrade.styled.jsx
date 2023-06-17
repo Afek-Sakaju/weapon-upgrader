@@ -4,6 +4,11 @@ import MuiZoom from "@mui/material/Zoom";
 import MuiGrid from "@mui/material/Grid";
 import MuiTypography from "@mui/material/Typography";
 import MuiStack from "@mui/material/Stack";
+import MuiFormControl from "@mui/material/FormControl";
+import MuiInputLabel from "@mui/material/InputLabel";
+import MuiSelect from "@mui/material/Select";
+import MuiMenuItem from "@mui/material/MenuItem";
+
 import { Image as MuiImage } from "mui-image";
 
 export const Stack = styled(MuiStack)`
@@ -48,3 +53,11 @@ export const ItemCenterAlone = styled(({ ...props }) => (
   justify-content: center;
   align-items: center;
 `;
+
+export const FormControl = MuiFormControl;
+
+export const InputLabel = MuiInputLabel;
+
+export const Select = MuiSelect;
+
+export const MenuItem = MuiMenuItem;
