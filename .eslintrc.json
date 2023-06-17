@@ -49,7 +49,8 @@
           ["@components", "./src/components/"],
           ["@base-components", "./src/base-components/"],
           ["@utils", "./src/utils/"],
-          ["@layouts", "./src/layouts/"]
+          ["@layouts", "./src/layouts/"],
+          ["@validations", "./src/validations/"]
         ],
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
