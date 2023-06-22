@@ -32,6 +32,10 @@
 - [x] _**Mui v5**_ : the project has been built using _MUI v5_.
 - [x] _**ESLINT**_ : the project adheres to the _ESLint_ guidelines and follows the best practices recommended by _airbnb_.
 
+### In addition, the project incorporates the following features:
+
+- [x] **Responsiveness** : the application is designed to be responsive and adapts to screens of all sizes. It achieves this by utilizing the responsive properties provided by MUI breakpoints for its components.
+
 ---
 
 ## Author
