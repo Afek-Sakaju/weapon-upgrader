@@ -1,49 +1,50 @@
 import React from "react";
 import PropTypes from "prop-types";
-import InputAdornment from "@mui/material/InputAdornment";
-import TextField from "@mui/material/TextField";
+
+import { InputAdornment, TextField } from "./Input.styled";
 
 export default function Input({
-  label,
-  id,
-  name,
-  variant,
-  onChange,
-  value,
-  startCmp,
-  endCmp,
-  fullWidth,
-  required,
-  readOnly,
-  type,
-  multiline,
-  maxRows,
-  rows,
   autoComplete,
+  endCmp,
   error,
-  margin,
   focused,
+  fullWidth,
   helperText,
+  id,
+  label,
+  margin,
+  maxRows,
+  multiline,
+  name,
+  onChange,
+  readOnly,
+  required,
+  rows,
+  startCmp,
+  type,
+  value,
+  variant,
   ...props
 }) {
   return (
     <TextField
-      fullWidth={fullWidth}
-      label={label}
-      id={id}
-      name={name}
+      autoComplete={autoComplete}
       error={error}
+      focused={focused}
+      fullWidth={fullWidth}
       helpertext={helperText}
+      id={id}
+      label={label}
+      margin={margin}
+      maxRows={maxRows}
+      multiline={multiline}
+      name={name}
       onChange={onChange}
       required={required}
-      value={value}
-      margin={margin}
-      focused={focused}
-      multiline={multiline}
-      maxRows={maxRows}
       rows={rows}
-      autoComplete={autoComplete}
       type={type}
+      value={value}
+      variant={variant}
       InputProps={{
         readOnly,
         ...(startCmp && {
@@ -57,54 +58,53 @@ export default function Input({
           ),
         }),
       }}
-      variant={variant}
       {...props}
     />
   );
 }
 
 Input.propTypes = {
-  label: PropTypes.string,
-  id: PropTypes.string,
-  name: PropTypes.string,
-  fullWidth: PropTypes.bool,
-  error: PropTypes.bool,
-  required: PropTypes.bool,
-  readOnly: PropTypes.bool,
-  onChange: PropTypes.func,
-  value: PropTypes.string,
-  focused: PropTypes.bool,
-  margin: PropTypes.oneOf(["normal", "dense"]),
-  type: PropTypes.oneOf(["text", "number", "password"]),
-  multiline: PropTypes.bool,
-  maxRows: PropTypes.number,
-  rows: PropTypes.number,
   autoComplete: PropTypes.string,
-  helperText: PropTypes.string,
-  variant: PropTypes.oneOf(["filled", "standard", "outlined"]),
-  startCmp: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   endCmp: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  error: PropTypes.bool,
+  focused: PropTypes.bool,
+  fullWidth: PropTypes.bool,
+  helperText: PropTypes.string,
+  id: PropTypes.string,
+  label: PropTypes.string,
+  margin: PropTypes.oneOf(["normal", "dense"]),
+  maxRows: PropTypes.number,
+  multiline: PropTypes.bool,
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  readOnly: PropTypes.bool,
+  required: PropTypes.bool,
+  rows: PropTypes.number,
+  startCmp: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  type: PropTypes.oneOf(["text", "number", "password"]),
+  value: PropTypes.string,
+  variant: PropTypes.oneOf(["filled", "standard", "outlined"]),
 };
 
 Input.defaultProps = {
-  label: undefined,
-  id: undefined,
-  name: undefined,
-  fullWidth: true,
-  error: undefined,
-  required: undefined,
-  readOnly: undefined,
-  onChange: undefined,
-  focused: undefined,
-  value: undefined,
-  type: "text",
-  margin: undefined,
-  multiline: undefined,
-  maxRows: undefined,
-  rows: undefined,
   autoComplete: "off",
-  helperText: undefined,
-  variant: "outlined",
-  startCmp: undefined,
   endCmp: undefined,
+  error: undefined,
+  focused: undefined,
+  fullWidth: true,
+  helperText: undefined,
+  id: undefined,
+  label: undefined,
+  margin: undefined,
+  maxRows: undefined,
+  multiline: undefined,
+  name: undefined,
+  onChange: undefined,
+  readOnly: undefined,
+  required: undefined,
+  rows: undefined,
+  startCmp: undefined,
+  type: "text",
+  value: undefined,
+  variant: "outlined",
 };
