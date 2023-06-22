@@ -35,6 +35,10 @@ export default defineConfig(() => ({
         find: "@layouts",
         replacement: path.resolve(__dirname, "./src/layouts"),
       },
+      {
+        find: "@validations",
+        replacement: path.resolve(__dirname, "./src/validations"),
+      },
     ],
   },
   server: {

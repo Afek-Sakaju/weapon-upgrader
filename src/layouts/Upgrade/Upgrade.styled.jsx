@@ -8,6 +8,8 @@ import MuiFormControl from "@mui/material/FormControl";
 import MuiInputLabel from "@mui/material/InputLabel";
 import MuiSelect from "@mui/material/Select";
 import MuiMenuItem from "@mui/material/MenuItem";
+import MuiSnackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
 
 import { Image as MuiImage } from "mui-image";
 
@@ -78,3 +80,7 @@ export const InputLabel = MuiInputLabel;
 export const Select = MuiSelect;
 
 export const MenuItem = MuiMenuItem;
+
+export const Snackbar = MuiSnackbar;
+
+export const Alert = MuiAlert;

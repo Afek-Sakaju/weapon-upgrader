@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import React, { useEffect, useMemo, useState } from "react";
 import PropTypes from "prop-types";
@@ -5,6 +6,7 @@ import { withFormik, FieldArray } from "formik";
 
 import { ButtonIcon, Checkbox, Input, PriceLabel } from "@base-components";
 import { getTotalPrice } from "@utils";
+import { upgradeSchema } from "@validations";
 import {
   Container,
   Item,
@@ -15,12 +17,15 @@ import {
   InputLabel,
   Select,
   MenuItem,
+  Alert,
+  Snackbar,
 } from "./Upgrade.styled";
 
 const Upgrade = (props) => {
   const {
     basicPrice,
     description,
+    errors,
     handleSubmit,
     image,
     isSubmitting,
@@ -33,6 +38,7 @@ const Upgrade = (props) => {
   } = props;
 
   const [shouldRender, setShouldRender] = useState(true);
+  const [showAlert, setShowAlert] = useState(false);
 
   const reRenderHandler = () => {
     setShouldRender(false);
@@ -46,23 +52,24 @@ const Upgrade = (props) => {
         upgradesList?.filter((upg) => values.upgradedIds.includes(upg._id))
       ),
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [values.upgradedIds.length]
   );
 
   useEffect(() => {
     if (values.totalPrice === 0) reRenderHandler();
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    if (isSubmitting) {
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 2000);
+    }
   }, [isSubmitting]);
 
   useEffect(() => {
     values.upgradedIds = [];
     reRenderHandler();
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [name]);
 
+  console.log(errors);
   return (
     <Container>
       <ItemCenterAlone>
@@ -111,6 +118,7 @@ const Upgrade = (props) => {
                       if (upgradeIndex >= 0) remove(upgradeIndex);
                       else push(_id);
                     }}
+                    error={errors.upgradedIds}
                   />
                 ) : null}
               </Item>
@@ -124,34 +132,32 @@ const Upgrade = (props) => {
           </ButtonIcon>
         ) : null}
       </ItemCenterAlone>
+      <Snackbar
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        open={showAlert}
+      >
+        {errors.upgradedIds ? (
+          <Alert severity="error">{errors.upgradedIds}</Alert>
+        ) : (
+          <Alert severity="success">Upgraded successfully!</Alert>
+        )}
+      </Snackbar>
     </Container>
   );
 };
 
 export default withFormik({
-  validateOnMount: false,
   validateOnChange: false,
-  enableReinitialize: true,
 
   mapPropsToValues: (props) => ({
     totalPrice: props.basicPrice,
     upgradedIds: [],
   }),
 
-  validate: (values) => {
-    const errors = {};
+  validationSchema: upgradeSchema,
 
-    if (!values.upgradedIds.length) {
-      errors.upgradedIds = "No upgrade selected, can't proceed !";
-      alert(errors.upgradedIds);
-    }
-
-    return errors;
-  },
-
-  handleSubmit: async (values, { setSubmitting, resetForm }) => {
-    alert(`Weapon upgraded successfully, it will cost $${values.totalPrice}`);
-    values.upgradedIds = [];
+  handleSubmit: async (values, { setSubmitting, resetForm, setValues }) => {
+    setValues({ ...values, upgradedIds: [] });
     setSubmitting(false);
     resetForm();
   },
