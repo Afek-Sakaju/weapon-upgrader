@@ -74,7 +74,7 @@ const Upgrade = (props) => {
     <Container>
       <ItemCenterAlone>
         <Title variant="h3">
-          Call of duty MW <br /> Weapon upgrade form:
+          Call of duty BO <br /> Weapon upgrade form:
         </Title>
       </ItemCenterAlone>
       <Item>
