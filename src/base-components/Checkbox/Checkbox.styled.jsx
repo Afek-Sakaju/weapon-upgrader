@@ -10,7 +10,7 @@ export const MuiCheckbox = styled(({ helperText, label, ...props }) => (
     <FormControlLabel
       control={<Checkbox {...props} />}
       label={<Typography>{label}</Typography>}
-      sx={{ userSelect: "none", fontSize: "5px !important" }}
+      sx={{ userSelect: "none" }}
     />
     {helperText && <FormHelperText>{helperText}</FormHelperText>}
   </>
@@ -23,6 +23,6 @@ export const Typography = styled(MuiTypography)(({ theme }) => ({
     fontWeight: "bolder",
   },
   [theme.breakpoints.down("sm")]: {
-    fontSize: "0.6em",
+    fontSize: "0.45em",
   },
 }));
