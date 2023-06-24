@@ -19,7 +19,7 @@ import {
   MenuItem,
   Alert,
   Snackbar,
-} from "./Upgrade.styled";
+} from "./UpgradeWeapon.styled";
 
 const Upgrade = (props) => {
   const {

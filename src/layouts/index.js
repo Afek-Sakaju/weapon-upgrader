@@ -1,1 +1,1 @@
-export { default as Upgrade } from "./Upgrade/Upgrade";
+export { default as Upgrade } from "./UpgradeWeapon/UpgradeWeapon";
