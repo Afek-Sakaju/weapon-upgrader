@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { CheckboxControl } from "./Checkbox.styled";
+import { MuiCheckbox } from "./Checkbox.styled";
 
 export default function Checkbox({
   label,
@@ -22,7 +22,7 @@ export default function Checkbox({
   ...props
 }) {
   return (
-    <CheckboxControl
+    <MuiCheckbox
       label={label}
       size={size}
       color={color}
