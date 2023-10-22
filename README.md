@@ -1,4 +1,4 @@
-# Weapon-Upgrader
+# Weapon Upgrader
 
 ## Overview
 
