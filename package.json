@@ -1,6 +1,6 @@
 {
     "name": "weapon-upgrader",
-    "description": "Upgrade your weapon",
+    "description": "This project focuses on acquiring Call of Duty weapon upgrades. Use a user-friendly form to easily select upgrades, and the total price is displayed upon submission.",
     "author": "afek-sakaju",
     "homepage": "https://Afek-Sakaju.github.io/weapon-upgrader/",
     "keywords": [
